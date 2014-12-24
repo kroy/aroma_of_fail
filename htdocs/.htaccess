@@ -1,0 +1,7 @@
+RewriteEngine On
+Options +FollowSymlinks
+
+RewriteCond %{REQUEST_URI} !^/assets [NC]
+
+# homepage
+RewriteRule ^$                  /homepage.php                   [NC,QSA,L]
