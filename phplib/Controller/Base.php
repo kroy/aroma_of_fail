@@ -1,8 +1,6 @@
 <?php
 
 class Controller_Base {
-    const TPL_PATH = "../template/";
-
     public function __construct() {
         if (Config::isDevelopment()) {
             ini_set('display_errors', 1);
@@ -10,7 +8,5 @@ class Controller_Base {
         }
     }
 
-    protected function render($tpl_name) {
-        require_once(self::TPL_PATH . $tpl_name);
-    }
+    // Maybe provide abstract action methods
 }

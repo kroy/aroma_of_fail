@@ -6,6 +6,7 @@ class Controller_Homepage extends Controller_Base {
     }
 
     public function show() {
-        self::render('base.php');
+        $tpl = new View_Homepage_Show();
+        $tpl->render();
     }
 }
