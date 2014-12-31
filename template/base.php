@@ -1,6 +1,8 @@
 <?php
 require_once('_shared/_head.php');
 
-echo "Hello World base.php";
+// $body_tpl = 'homepage/show.php';
+
+require_once($body_tpl);
 
 require_once('_shared/_foot.php');
