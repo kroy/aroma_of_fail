@@ -6,12 +6,7 @@ class View_Base {
 
     protected $title;
     protected $body_tpl;
-    protected $tpl_vars;
-
-    public function __construct() {
-        $this->title = '';
-        $this->tpl_vars = [];
-    }
+    protected $tpl_vars = [];
 
     public function render() {
         $body_tpl = $this->body_tpl;
