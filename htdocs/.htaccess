@@ -5,4 +5,4 @@ RewriteCond %{REQUEST_URI} !^/assets [NC]
 
 # homepage
 RewriteRule ^$                  /homepage.php                   [NC,QSA,L]
-RewriteRule ^members$          /homepage.php                   [NC,QSA,L]
+RewriteRule ^members$           /members.php                   [NC,QSA,L]
