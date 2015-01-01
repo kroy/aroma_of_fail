@@ -1,3 +1,3 @@
-<?php
-
-echo 'hello';
+<div class='container'>
+    <?php echo "Hello";?>
+</div>
