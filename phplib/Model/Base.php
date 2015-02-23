@@ -25,10 +25,12 @@ class Model_Base {
 
     /**
      * Magic setter method to facilitate magic
-     * @todo validation
+     * @todo validation on field type
      */
     public function __set($field_name, $value) {
-        $this->$fields[$field_name] = $value;
+        if (isset(static::$field_map[$field_name])) {
+            $this->fields[$field_name] = $value;
+        }
     }
 
     /**
