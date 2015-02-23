@@ -18,7 +18,7 @@ class Model_Base {
      * @todo validation at some point during the construction of the model
      */
     public function __construct() {
-        foreach (static::$fields as $field) {
+        foreach (static::$field_map as $field) {
             $this->__set($field, null);
         }
     }
