@@ -36,16 +36,20 @@ abstract class Finder_Base {
      * Creates a prepared query for the finder to execute
      * @param $query_name String the name of the query
      * @param $query String a string of PDO SQL to call when executed
-     * @return PDOStatement|false
+     * @return Finder_Statement|null
      * @todo use a wrapper to represent prepared queries so we can track certain things
      */
     protected function prepareQuery($query_name, $query) {
         $prepared_query = $this->pdo->prepare($query);
         if ($prepared_query) {
-            $this->prepared_queries[$query_name] = $prepared_query;
+            $query_object = new Finder_PreparedQuery($query_name, $prepared_query);
+            $this->prepared_queries[$query_name] = $query_object;
         }
 
-        return $prepared_query;
+        // if we try to prepare a query with the same name twice, and the
+        // second prepared_query is invalid, this will return the first,
+        // valid prepared_query
+        return $this->prepared_queries[$query_name];
     }
 
     /**
