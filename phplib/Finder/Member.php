@@ -20,4 +20,6 @@ class Finder_Member extends Finder_Base {
     public function findMany(array $pks) {
         // todo
     }
+
+
 }
